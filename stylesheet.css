@@ -1,10 +1,10 @@
-nav{
-    background-color: #033047;
-    color: #d9d9d9;
+nav {
+  background-color: #033047;
+  color: #d9d9d9;
+  padding: 25px;
 }
 
-.nav-time-date
-{
-    display: inline;
-    float: right;
+.nav-time-date {
+  float: right;
+  display:inline;
 }
