@@ -2,9 +2,35 @@ nav {
   background-color: #033047;
   color: #d9d9d9;
   padding: 25px;
+  font: 200;
+  font-size: larger;
+  font-family: fantasy;
+
 }
 
-.nav-time-date {
+body
+{
+background-color: #5C677D;
+}
+
+.nav-time-date 
+{
   float: right;
   display:inline;
+}
+
+li
+{
+    list-style-type: none;
+    float: left;
+    display: inline;
+}
+
+li a
+{
+color: #d9d9d9;
+display: block;
+padding-right: 25px;
+text-align: center;
+text-decoration: none;
 }
