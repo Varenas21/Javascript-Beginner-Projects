@@ -2,15 +2,17 @@ nav {
   background-color: #033047;
   color: #d9d9d9;
   padding: 25px;
-  font: 200;
+  font: 300;
   font-size: larger;
-  font-family: fantasy;
-
+  font-family:monospace;
+  border-radius: 10px;;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 body
 {
-background-color: #5C677D;
+    font-family:monospace;
+background-color: #304C62;
 }
 
 .nav-time-date 
@@ -33,4 +35,64 @@ display: block;
 padding-right: 25px;
 text-align: center;
 text-decoration: none;
+}
+
+.div-titles
+{
+  background-color: #F4F3EE;
+  font-size: larger;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.div-para
+{
+  background-color: #5C677D;
+  color: #d9d9d9;
+  text-align: center;
+  padding: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.div-container
+{
+  background-color: #5C677D;
+  color: #d9d9d9;
+  text-align: center;
+  padding: 3px;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.column
+{
+  width: 25.25%;
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.row::after
+{
+  content: "";
+  display: table;
+  clear:both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
 }
