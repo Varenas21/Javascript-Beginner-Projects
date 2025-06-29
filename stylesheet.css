@@ -4,41 +4,36 @@ nav {
   padding: 25px;
   font: 300;
   font-size: larger;
-  font-family:monospace;
-  border-radius: 10px;;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: monospace;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-body
-{
-    font-family:monospace;
-background-color: #304C62;
+body {
+  font-family: monospace;
+  background-color: #304C62;
 }
 
-.nav-time-date 
-{
+.nav-time-date {
   float: right;
-  display:inline;
+  display: inline;
 }
 
-li
-{
-    list-style-type: none;
-    float: left;
-    display: inline;
+li {
+  list-style-type: none;
+  float: left;
+  display: inline;
 }
 
-li a
-{
-color: #d9d9d9;
-display: block;
-padding-right: 25px;
-text-align: center;
-text-decoration: none;
+li a {
+  color: #d9d9d9;
+  display: block;
+  padding-right: 25px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.div-titles
-{
+.div-titles {
   background-color: #F4F3EE;
   font-size: larger;
   text-align: center;
@@ -47,8 +42,7 @@ text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.div-para
-{
+.div-para {
   background-color: #5C677D;
   color: #d9d9d9;
   text-align: center;
@@ -58,8 +52,7 @@ text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.div-container
-{
+.div-container {
   background-color: #5C677D;
   color: #d9d9d9;
   text-align: center;
@@ -69,8 +62,7 @@ text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.column
-{
+.column {
   width: 25.25%;
   padding: 15px;
 }
@@ -83,11 +75,10 @@ text-decoration: none;
   margin-top: 20px;
 }
 
-.row::after
-{
+.row::after {
   content: "";
   display: table;
-  clear:both;
+  clear: both;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -95,4 +86,34 @@ text-decoration: none;
   .column {
     width: 100%;
   }
+}
+
+button {
+  color: #033047;
+  background-color: #d9d9d9;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.list-items {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card-column {
+  width: 25.25%;
+  padding: 15px;
 }
