@@ -1,5 +1,5 @@
-<!DOCTYPE html> <!-- Represents the type of document-->
 <!-- 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,17 +10,32 @@
 </head>
 
 <!-- NAVBAR -->
-<nav style="background-color: #033047; color: #d9d9d9;">
+<nav class="nav">
     <div>
         <ul>
+            <li><a href="index.html">Home</a></li>
             <li><a href="Calculator.html">Calculator</a></li>
             <li><a href="ToDoList.html">To-Do List</a></li>
             <li><a href="Timer.html">Timer & Stopwatch</a></li>
-            <li><a href="index.html">Home</a></li>
         </ul>
     </div>
-
-    <div class="nav-time-date" id="TimeDate"></div>
+    
 </nav>
-<script src="../script.js"></script>
+
+<body>
+    <!-- Create buttons that begins a new list -->
+    <div class="div-titles">
+        <h1><b>Welcome to <i>Basic Tools!</i></b></h1>
+        <div class="div-para">
+            <h2><i><b>Timer & Stopwatch</b></i> - Track time with precision using a customizable stopwatch and timer. Start,
+            stop, reset, and receive alerts when time is up—perfect for productivity, workouts, or countdowns!</h2>
+            <br>
+            <h1><u>Current Date & Time</u></h1>
+            <h1><div class="time-date" id="TimeDate"></div></h1>
+        </div>
+        <div id="ListContainer" class="card-row"></div>
+    </div>
+    </div>
+</body>
+<script src="../Scripts/Timer.js"></script>
 </html>
