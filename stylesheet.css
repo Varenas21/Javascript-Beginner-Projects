@@ -1,7 +1,15 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT  */
+:root
+{
+  --Chinese-Black: #0D0E20;
+  --Lavender-White: #EEE6FA;
+  --Majorelle-Blue: #7546E8;
+  --Persian-Indigo: #2D1C7F;
+}
+
 
 nav {
-  background-color: #033047;
+  background-color: var(--Chinese-Black);
   color: #d9d9d9;
   padding: 25px;
   font: 300;
@@ -42,11 +50,11 @@ nav {
 
 body {
   font-family: monospace;
-  background-color: #304C62;
+  background-color: var(--Lavender-White);
 }
 
 .div-titles {
-  background-color: #F4F3EE;
+  color: black;
   font-size: larger;
   text-align: center;
   padding: 5px;
@@ -56,7 +64,7 @@ body {
 }
 
 .div-para {
-  background-color: #5C677D;
+  background-color: var(--Persian-Indigo);
   color: #d9d9d9;
   text-align: center;
   padding: 15px;
@@ -66,7 +74,7 @@ body {
 }
 
 .div-container {
-  background-color: #5C677D;
+  background-color: var(--Persian-Indigo);
   color: #d9d9d9;
   text-align: center;
   padding: 3px;
@@ -102,8 +110,8 @@ body {
 }
 
 button {
-  color: #033047;
-  background-color: #d9d9d9;
+  color: var(--Lavender-White);
+  background-color: var(--Vodka);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -111,6 +119,7 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .list-items {

@@ -19,7 +19,7 @@
             <li><a href="Timer.html">Timer & Stopwatch</a></li>
         </ul>
     </div>
-    
+
 </nav>
 
 <body>
@@ -27,15 +27,40 @@
     <div class="div-titles">
         <h1><b>Welcome to <i>Basic Tools!</i></b></h1>
         <div class="div-para">
-            <h2><i><b>Timer & Stopwatch</b></i> - Track time with precision using a customizable stopwatch and timer. Start,
-            stop, reset, and receive alerts when time is up—perfect for productivity, workouts, or countdowns!</h2>
+            <h2><i><b>Timer & Stopwatch</b></i> - Track time with precision using a customizable stopwatch and timer.
+                Start,
+                stop, reset, and receive alerts when time is up—perfect for productivity, workouts, or countdowns!</h2>
             <br>
             <h1><u>Current Date & Time</u></h1>
-            <h1><div class="time-date" id="TimeDate"></div></h1>
+            <h1>
+                <div class="time-date" id="TimeDate"></div>
+            </h1>
         </div>
-        <div id="ListContainer" class="card-row"></div>
-    </div>
+
+        <div class="row">
+            <div class="column div-titles">
+                <h2>Timer</h2>
+                <div class="div-container">
+                    <div class="time-date">
+                        00::00::00
+                    </div>
+                    <button id="TimerStartButton">Start</button>
+                </div>
+            </div>
+            <div class="column div-titles">
+                <h2>Stopwatch</h2>
+                <div class="div-container">
+                    <div class="time-date">
+                        00::00::00
+                    </div>
+                    <button id="StopwatchStartButton">Start</button>
+                    <button id="StopButton">Stop</button>
+                    <button id="ResetButton">Reset</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="../Scripts/Timer.js"></script>
+
 </html>

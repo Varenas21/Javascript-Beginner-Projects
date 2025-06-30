@@ -20,7 +20,7 @@ function SetClock() {
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    const TIME_STRING = `${hours}::${minutes}::${seconds} ${timeSession} ${days}/${months}/${years}`;
+    const TIME_STRING = `${hours}::${minutes}::${seconds} ${timeSession} ${months}/${days}/${years}`;
     document.getElementById('TimeDate').innerHTML = TIME_STRING;
 }
 SetClock();

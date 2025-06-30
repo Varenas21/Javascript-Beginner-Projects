@@ -63,7 +63,7 @@ CREATE_BUTTON.addEventListener('click', function () {
         const LI = document.createElement('li');
         LI.textContent = itemText;
         const COMPLETE_ITEM = document.createElement('button');
-        COMPLETE_ITEM.textContent = "Completed"
+        COMPLETE_ITEM.style.float = 'right';
         UL.appendChild(LI);
         UL.appendChild(COMPLETE_ITEM);
 
@@ -72,8 +72,10 @@ CREATE_BUTTON.addEventListener('click', function () {
         COMPLETE_ITEM.addEventListener('click', () => {
             isComplete = true;
             if (isComplete === true) {
-                LI.style.color = 'green';
+                LI.style.color = 'lime';
                 COMPLETE_ITEM.disabled = true;
+                COMPLETE_ITEM.style.backgroundColor = 'indigo';
+  
             }
         });
     });
