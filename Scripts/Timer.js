@@ -2,7 +2,9 @@
 // TIMER
 document.getElementById('TimerStartButton').addEventListener("click", startHandler);
 document.getElementById('StopwatchStartButton').addEventListener("click", startHandler);
-
+const USER_INPUT_THOURS = document.getElementById('UserHours').value;
+const USER_INPUT_TMINUTES = document.getElementById('UserMinutes').value;
+const USER_INPUT_TSECS = document.getElementById('UserSeconds').value;
 
 // Change every 10000 seconds
 function SetClock() {
@@ -38,7 +40,8 @@ function startHandler(event) {
 
     switch (buttonId) {
         case "TimerStartButton":
-            startTimer();
+            startTimer(USER_INPUT_THOURS,USER_INPUT_TMINUTES,USER_INPUT_TSECS);
+
             break;
         case "StopwatchStartButton":
             startStopWatch();
@@ -48,9 +51,10 @@ function startHandler(event) {
     }
 }
 
-function startTimer()
+function startTimer(userHours, userMinutes, userSecs)
 {
-
+    // Minutes = 60, seconds = 60
+    
 }
 
 function startStopWatch()
