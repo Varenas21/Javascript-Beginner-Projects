@@ -1,5 +1,8 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT */
 // TIMER
+document.getElementById('TimerStartButton').addEventListener("click", startHandler);
+document.getElementById('StopwatchStartButton').addEventListener("click", startHandler);
+
 
 // Change every 10000 seconds
 function SetClock() {
@@ -26,4 +29,31 @@ function SetClock() {
 SetClock();
 setInterval(SetClock, 1000);
 
-// TIMER
+// START BUTTON
+// Buttons will have the same function, only difference one will be adding time up the other will be going down
+// User will be able to set the time they want
+
+function startHandler(event) {
+    const buttonId = event.target.id;
+
+    switch (buttonId) {
+        case "TimerStartButton":
+            startTimer();
+            break;
+        case "StopwatchStartButton":
+            startStopWatch();
+            break;
+        default:
+            console.warn("Unknown start button clicked.");
+    }
+}
+
+function startTimer()
+{
+
+}
+
+function startStopWatch()
+{
+    
+}

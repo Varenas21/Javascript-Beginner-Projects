@@ -41,21 +41,49 @@
             <div class="column div-titles">
                 <h2>Timer</h2>
                 <div class="div-container">
-                    <div class="time-date">
-                        00::00::00
+                    <div class="time-input-group">
+                        <label>
+                            <span class="time-label">Hours</span>
+                            <input type="number" id="UserHours" name="UserHours" min="0" max="99">
+                        </label>
+                        <span class="time-seperator">::</span>
+                        <label>
+                            <span class="time-label">Minutes</span>
+                            <input type="number" id="UserMinutes" name="UserMinutes" min="0" max="59">
+                        </label>
+                        <span class="time-seperator">::</span>
+                        <label>
+                            <span class="time-label">Seconds</span>
+                            <input type="number" id="UserSeconds" name="UserSeconds" min="0" max="59">
+                        </label>
                     </div>
                     <button id="TimerStartButton">Start</button>
+                    <button id="TimerStopButton">Stop</button>
+                    <button id="TimerResetButton">Reset</button>
                 </div>
             </div>
             <div class="column div-titles">
                 <h2>Stopwatch</h2>
                 <div class="div-container">
-                    <div class="time-date">
-                        00::00::00
+                    <div class="time-input-group">
+                        <label>
+                            <span class="time-label">Hours</span>
+                            <input type="number" id="UserHoursSW" name="UserHoursSW" min="0" max="99">
+                        </label>
+                        <span class="time-seperator">::</span>
+                        <label>
+                            <span class="time-label">Minutes</span>
+                            <input type="number" id="UserMinutesSW" name="UserMinutesSW" min="0" max="59">
+                        </label>
+                        <span class="time-seperator">::</span>
+                        <label>
+                            <span class="time-label">Seconds</span>
+                            <input type="number" id="UserSecondsSW" name="UserSecondsSW" min="0" max="59">
+                        </label>
                     </div>
                     <button id="StopwatchStartButton">Start</button>
-                    <button id="StopButton">Stop</button>
-                    <button id="ResetButton">Reset</button>
+                    <button id="StopwatchStopButton">Stop</button>
+                    <button id="StopwatchResetButton">Reset</button>
                 </div>
             </div>
         </div>
