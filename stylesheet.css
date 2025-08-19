@@ -1,22 +1,27 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT  */
 :root
 {
-  --Chinese-Black: #0D0E20;
-  --Lavender-White: #EEE6FA;
-  --Majorelle-Blue: #7546E8;
-  --Persian-Indigo: #2D1C7F;
+  --Dark-Navy: #2D3250;
+  --Light-Orange: #F9B17A;
+  --Light-Navy: #676F9D;
+  --Medium-Navy: #424769;
 }
 
+@font-face {
+  font-family: Raleway;
+  src: url(./fonts/raleway/Raleway-Regular.ttf);
+}
 
 nav {
-  background-color: var(--Chinese-Black);
-  color: #d9d9d9;
+  background-color: var(--Dark-Navy);
+  color: var(--Light-Orange);
   padding: 25px;
   font: 300;
   font-size: larger;
-  font-family: monospace;
+  font-family: Raleway;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-size: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -39,7 +44,7 @@ nav {
 }
 
 .nav li a{
-  color: #d9d9d9;
+  color: var(--Light-Orange);
   text-decoration: none;
   font-weight: bold;
 }
@@ -50,11 +55,13 @@ nav {
 
 body {
   font-family: monospace;
-  background-color: var(--Lavender-White);
+  background-color: whitesmoke;
+   font-family: Raleway;
 }
 
 .div-titles {
   color: black;
+   font-family: Raleway;
   font-size: larger;
   text-align: center;
   padding: 5px;
@@ -64,8 +71,8 @@ body {
 }
 
 .div-para {
-  background-color: var(--Persian-Indigo);
-  color: #d9d9d9;
+  background-color: var(--Medium-Navy);
+  color: var(--Light-Orange);
   text-align: center;
   padding: 15px;
   border-top-left-radius: 20px;
@@ -74,8 +81,8 @@ body {
 }
 
 .div-container {
-  background-color: var(--Persian-Indigo);
-  color: #d9d9d9;
+  background-color: var(--Medium-Navy);
+  color: var(--Light-Orange);
   text-align: center;
   padding: 3px;
   align-items: center;
@@ -110,8 +117,8 @@ body {
 }
 
 button {
-  color: var(--Lavender-White);
-  background-color: var(--Vodka);
+  color: var(--Light-Orange);
+  background-color: var(--Medium-Navy);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

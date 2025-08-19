@@ -1,10 +1,13 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT */
-// TIMER
 document.getElementById('TimerStartButton').addEventListener("click", startHandler);
+document.getElementById('TimerResetButton').addEventListener("click", resetTimer);
+document.getElementById('TimerStopButton').addEventListener("click", stopTimer);
 document.getElementById('StopwatchStartButton').addEventListener("click", startHandler);
-const USER_INPUT_THOURS = document.getElementById('UserHours').value;
-const USER_INPUT_TMINUTES = document.getElementById('UserMinutes').value;
-const USER_INPUT_TSECS = document.getElementById('UserSeconds').value;
+const TIMER_DISPLAY = document.getElementById('TimerDisplay');
+let countdownInterval;
+let totalSeconds = 0;
+let isRunning = false;
+
 
 // Change every 10000 seconds
 function SetClock() {
@@ -14,7 +17,7 @@ function SetClock() {
     let minutes = TIMER.getMinutes();
     let seconds = TIMER.getSeconds();
     let days = TIMER.getDate();
-    let months = TIMER.getMonth() + 1; // January is 0, need to add 1 to get current month
+    let months = TIMER.getMonth() + 1; 
     let years = TIMER.getFullYear();
 
     let timeSession = "AM";
@@ -40,8 +43,10 @@ function startHandler(event) {
 
     switch (buttonId) {
         case "TimerStartButton":
-            startTimer(USER_INPUT_THOURS,USER_INPUT_TMINUTES,USER_INPUT_TSECS);
-
+            const UI_THOURS = parseInt(document.getElementById('UserHours').value) || 0;
+            const UI_TMINUTES = parseInt(document.getElementById('UserMinutes').value) || 0;
+            const UI_TSECS = parseInt(document.getElementById('UserSeconds').value) || 0;
+            startTimer(UI_THOURS, UI_TMINUTES, UI_TSECS);
             break;
         case "StopwatchStartButton":
             startStopWatch();
@@ -51,13 +56,59 @@ function startHandler(event) {
     }
 }
 
-function startTimer(userHours, userMinutes, userSecs)
-{
-    // Minutes = 60, seconds = 60
+
+function startTimer(hours, minutes, seconds)
+{    
+   if(!isRunning)
+    {
+        totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+        if (totalSeconds <= 0)
+        {
+            alert("Please enter a valid time");
+            return;
+        }
+        
+        isRunning = true;
+        UpdateDisplay();
+
+        countdownInterval = setInterval(() => {
+            if(totalSeconds > 0)
+            {
+                totalSeconds--;
+                UpdateDisplay();
+            }
+            else
+            {
+                clearInterval(countdownInterval);
+                isRunning = false;
+                alert("Timer Finished!");
+
+            }
+        }, 1000);
+    }
     
 }
 
-function startStopWatch()
+function UpdateDisplay()
 {
-    
+    let hrs = Math.floor(totalSeconds / 3600);
+    let mins = Math.floor((totalSeconds % 3600) / 60);
+    let secs = totalSeconds % 60;
+
+    TIMER_DISPLAY.textContent = `${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2,'0')}`;
+}
+
+function resetTimer()
+{
+    clearInterval(countdownInterval);
+    isRunning = false;
+    totalSeconds = 0;
+    UpdateDisplay();
+
+}
+
+function stopTimer()
+{
+    clearInterval(countdownInterval);
+    isRunning = false;
 }
