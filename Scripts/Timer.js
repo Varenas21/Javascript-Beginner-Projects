@@ -1,13 +1,23 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT */
-document.getElementById('TimerStartButton').addEventListener("click", startHandler);
-document.getElementById('TimerResetButton').addEventListener("click", resetTimer);
-document.getElementById('TimerStopButton').addEventListener("click", stopTimer);
-document.getElementById('StopwatchStartButton').addEventListener("click", startHandler);
+document.getElementById('TStartBtn').addEventListener("click", ButtonHandler);
+document.getElementById('TResetBtn').addEventListener("click", ButtonHandler);
+document.getElementById('TStopBtn').addEventListener("click", ButtonHandler);
+
+const UI_THOURS = parseInt(document.getElementById('UserHours').value) || 0;
+const UI_TMINUTES = parseInt(document.getElementById('UserMinutes').value) || 0;
+const UI_TSECS = parseInt(document.getElementById('UserSeconds').value) || 0;
+
+document.getElementById('SWStartBtn').addEventListener("click", ButtonHandler);
+document.getElementById('SWResetBtn').addEventListener("click", ButtonHandler);
+document.getElementById('SWStopBtn').addEventListener("click", ButtonHandler)
+
 const TIMER_DISPLAY = document.getElementById('TimerDisplay');
+const STOPWATCH_DISPLAY = document.getElementById('SWDisplay');
+
 let countdownInterval;
+let countInterval;
 let totalSeconds = 0;
 let isRunning = false;
-
 
 // Change every 10000 seconds
 function SetClock() {
@@ -17,7 +27,7 @@ function SetClock() {
     let minutes = TIMER.getMinutes();
     let seconds = TIMER.getSeconds();
     let days = TIMER.getDate();
-    let months = TIMER.getMonth() + 1; 
+    let months = TIMER.getMonth() + 1;
     let years = TIMER.getFullYear();
 
     let timeSession = "AM";
@@ -34,51 +44,101 @@ function SetClock() {
 SetClock();
 setInterval(SetClock, 1000);
 
-// START BUTTON
-// Buttons will have the same function, only difference one will be adding time up the other will be going down
-// User will be able to set the time they want
-
-function startHandler(event) {
+function ButtonHandler(event) {
     const buttonId = event.target.id;
 
     switch (buttonId) {
-        case "TimerStartButton":
-            const UI_THOURS = parseInt(document.getElementById('UserHours').value) || 0;
-            const UI_TMINUTES = parseInt(document.getElementById('UserMinutes').value) || 0;
-            const UI_TSECS = parseInt(document.getElementById('UserSeconds').value) || 0;
-            startTimer(UI_THOURS, UI_TMINUTES, UI_TSECS);
+        case "TStartBtn":
+            StartTimer(UI_THOURS, UI_TMINUTES, UI_TSECS);
             break;
-        case "StopwatchStartButton":
-            startStopWatch();
+        case "SWStartBtn":
+            StartStopWatch();
+            break;
+        case "TResetBtm":
+        case "SWResetBtn":
+            Reset(buttonId);
+            break;
+        case "TStopBtn":
+        case "SWStopBtn":
+            Stop(buttonId);
             break;
         default:
-            console.warn("Unknown start button clicked.");
+            console.warn("Unknown button clicked.");
     }
 }
 
+function Reset(buttonId) {
+    if (buttonId === "SWResetBtn") {
+        clearInterval(countInterval);
+        isRunning = false;
+        totalSeconds = 0;
+        UpdateDisplaySW();
+    }
+    else if (buttonId === "TResetBtn") {
+        clearInterval(countdownInterval);
+        isRunning = false;
+        totalSeconds = 0;
+        UpdateDisplay();
+    }
+}
 
-function startTimer(hours, minutes, seconds)
-{    
-   if(!isRunning)
-    {
+function Stop(buttonId) {
+    if (buttonId === "SWStopBtn") {
+        clearInterval(countInterval);
+        isRunning = false;
+    }
+    else if (buttonId === "TStopBtn") {
+        clearInterval(countdownInterval);
+        isRunning = false;
+    }
+}
+
+function StartStopWatch() {
+    let hours = 0;
+    let mins = 0;
+    let secs = 0;
+    totalSeconds = (hours * 3600) + (mins * 60) + secs;
+
+    isRunning = true;
+    UpdateDisplaySW();
+
+    countInterval = setInterval(() => {
+        if (totalSeconds >= 0) {
+            totalSeconds++;
+            UpdateDisplaySW();
+        }
+        else {
+            clearInterval(countInterval);
+            isRunning = false;
+        }
+    }, 1000);
+}
+
+function UpdateDisplaySW() {
+    let hrs = Math.floor(totalSeconds / 3600);
+    let mins = Math.floor((totalSeconds % 3600) / 60);
+    let secs = totalSeconds % 60;
+
+    STOPWATCH_DISPLAY.textContent = `${hrs.toString().padStart(2, '0')}::${mins.toString().padStart(2, '0')}::${secs.toString().padStart(2, '0')}`;
+}
+
+function StartTimer(hours, minutes, seconds) {
+    if (!isRunning) {
         totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
-        if (totalSeconds <= 0)
-        {
+        if (totalSeconds <= 0) {
             alert("Please enter a valid time");
             return;
         }
-        
+
         isRunning = true;
         UpdateDisplay();
 
         countdownInterval = setInterval(() => {
-            if(totalSeconds > 0)
-            {
+            if (totalSeconds > 0) {
                 totalSeconds--;
                 UpdateDisplay();
             }
-            else
-            {
+            else {
                 clearInterval(countdownInterval);
                 isRunning = false;
                 alert("Timer Finished!");
@@ -86,29 +146,13 @@ function startTimer(hours, minutes, seconds)
             }
         }, 1000);
     }
-    
+
 }
 
-function UpdateDisplay()
-{
+function UpdateDisplay() {
     let hrs = Math.floor(totalSeconds / 3600);
     let mins = Math.floor((totalSeconds % 3600) / 60);
     let secs = totalSeconds % 60;
 
-    TIMER_DISPLAY.textContent = `${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2,'0')}`;
-}
-
-function resetTimer()
-{
-    clearInterval(countdownInterval);
-    isRunning = false;
-    totalSeconds = 0;
-    UpdateDisplay();
-
-}
-
-function stopTimer()
-{
-    clearInterval(countdownInterval);
-    isRunning = false;
+    TIMER_DISPLAY.textContent = `${hrs.toString().padStart(2, '0')}::${mins.toString().padStart(2, '0')}::${secs.toString().padStart(2, '0')}`;
 }

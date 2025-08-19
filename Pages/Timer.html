@@ -41,7 +41,7 @@
             <div class="column div-titles">
                 <h2>Timer</h2>
                 <div class="div-container">
-                    <h1 id="TimerDisplay">00:00::00</h1>
+                    <h1 id="TimerDisplay">00::00::00</h1>
                     <div class="time-input-group">
                         <label>
                             <span class="time-label">Hours</span>
@@ -58,34 +58,18 @@
                             <input type="number" id="UserSeconds" name="UserSeconds" min="0" max="59">
                         </label>
                     </div>
-                    <button id="TimerStartButton">Start</button>
-                    <button id="TimerStopButton">Stop</button>
-                    <button id="TimerResetButton">Reset</button>
+                    <button id="TStartBtn">Start</button>
+                    <button id="TStopBtn">Stop</button>
+                    <button id="TResetBtn">Reset</button>
                 </div>
             </div>
             <div class="column div-titles">
                 <h2>Stopwatch</h2>
                 <div class="div-container">
-                    <h1 id="StopWatchDisplay">00:00::00</h1>
-                    <div class="time-input-group">
-                        <label>
-                            <span class="time-label">Hours</span>
-                            <input type="number" id="UserHoursSW" name="UserHoursSW" min="0" max="99">
-                        </label>
-                        <span class="time-seperator">::</span>
-                        <label>
-                            <span class="time-label">Minutes</span>
-                            <input type="number" id="UserMinutesSW" name="UserMinutesSW" min="0" max="59">
-                        </label>
-                        <span class="time-seperator">::</span>
-                        <label>
-                            <span class="time-label">Seconds</span>
-                            <input type="number" id="UserSecondsSW" name="UserSecondsSW" min="0" max="59">
-                        </label>
-                    </div>
-                    <button id="StopwatchStartButton">Start</button>
-                    <button id="StopwatchStopButton">Stop</button>
-                    <button id="StopwatchResetButton">Reset</button>
+                    <h1 id="SWDisplay">00::00::00</h1>
+                    <button id="SWStartBtn">Start</button>
+                    <button id="SWStopBtn">Stop</button>
+                    <button id="SWResetBtn">Reset</button>
                 </div>
             </div>
         </div>
