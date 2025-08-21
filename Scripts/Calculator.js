@@ -1,42 +1,73 @@
-document.getElementById('Add').addEventListener("click", OperationHandler);
-document.getElementById('Subtract').addEventListener("click", OperationHandler);
-document.getElementById('Multiply').addEventListener("click", OperationHandler);
-document.getElementById('Divide').addEventListener("click", OperationHandler);
-document.getElementById('Modulus').addEventListener("click", OperationHandler);
+document.getElementById('+').addEventListener("click", OperationHandler);
+document.getElementById('-').addEventListener("click", OperationHandler);
+document.getElementById('*').addEventListener("click", OperationHandler);
+document.getElementById('/').addEventListener("click", OperationHandler);
+document.getElementById('%').addEventListener("click", OperationHandler);
 document.getElementById('Clear').addEventListener("click", OperationHandler);
+document.getElementById('Total').addEventListener("click", OperationHandler);
 
-const CALC_DISPLAY = document.getElementById('Display').value;
+const CALC_DISPLAY = document.getElementById('CalcDisplay');
 
-let currentNumber = '';
+let currentInput = '';
+let previousInput = '';
 let currentOperation = '';
-let previousNumber = '';
 
-function OperateNumber(number)
-{
-    currentNumber += number;
-    CALC_DISPLAY = `${previousNumber} ${currentOperation} ${currentNumber}`;
+function OperateNumber(number) {
+    currentInput += number;
+    CALC_DISPLAY.textContent = `${previousInput} ${currentOperation} ${currentInput}`;
 }
 
-function OperationHandler(event)
-{
+function OperationHandler(event) {
     const operationBtnId = event.target.id;
-
-    switch(operationBtnId)
-    {
-        case "Add":
-            break;
-        case "Subtract":
-            break;
-        case "Multiply":
-            break;
-        case "Divide":
-            break;
-        case "Modulus":
-            break;
-        case "Clear":
-            break;
-        default:
-            alert("No equation to calculate!");
-        
+    if (currentInput === '') { return; }
+    if (operationBtnId === 'Clear') {
+        currentInput = '';
+        currentOperation = '';
+        previousInput = '';
+        CALC_DISPLAY.textContent = '0';
+        return;
     }
+    if (previousInput !== '') { Caculator(operationBtnId); }
+
+    currentOperation = operationBtnId;
+    previousInput = currentInput;
+    currentInput = '';
+    CALC_DISPLAY.textContent = `${previousInput} ${currentOperation}`;
+}
+
+function Caculator(operation) {
+    let result;
+    let currentNumber = parseFloat(currentInput);
+    let previousNumber = parseFloat(previousInput);
+
+    switch (operation) {
+        case "+":
+            result = previousNumber + currentNumber;
+            UpdateDisplayCalc(result);
+            return;
+        case "-":
+            result = previousNumber - currentNumber;
+            UpdateDisplayCalc(result);
+            return;
+        case "*":
+            result = previousNumber * currentNumber;
+            return;
+        case "/":
+            if (currentNumber === 0) { return;}
+            result = previousNumber / currentNumber;
+            UpdateDisplayCalc(result);
+            return;
+        case "%":
+            result = previousNumber % currentNumber;
+            UpdateDisplayCalc(result);
+            return;
+    }
+ 
+}
+
+function UpdateDisplayCalc(total)
+{
+    currentOperation = '';
+    previousInput = '';
+    CALC_DISPLAY.textContent = total;
 }

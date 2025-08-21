@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Basic Tools Website</title>
     <link rel="stylesheet" href="../stylesheet.css">
-    <script src="../Scripts/Calculator.js"></script>
+   
 </head>
 
 <!-- NAVBAR -->
@@ -34,32 +34,35 @@
                 <h2 id="CalcDisplay">DISPLAY</h2>
                 <div class="div-container">
                     <div class="row">
-                        <button class="calculator-column calculator-button" id="numberOne" onclick="OperateNumber(1)">1</button>
-                        <button class="calculator-column calculator-button" id="numberTwo" onclick="OperateNumber(2)">2</button>
-                        <button class="calculator-column calculator-button" id="numberThree" onclick="OperateNumber(3)">3</button>
                         <button class="calculator-column calculator-button" id="Clear">CE</button>
+                        <button class="calculator-column calculator-button" id="+" >+</button>
+                        <button class="calculator-column calculator-button" id="-">-</button>
+                        <button class="calculator-column calculator-button" id="/">/</button>
+                        <button class="calculator-column calculator-button" id="Total">=</button>
                     </div>
                     <div class="row">
-                        <button class="calculator-column calculator-button" id="numberFour" onclick="OperateNumber(4)">4</button>
-                        <button class="calculator-column calculator-button" id="numberFive" onclick="OperateNumber(5)">5</button>
-                        <button class="calculator-column calculator-button" id="numberSix" onclick="OperateNumber(6)">6</button>
-                        <button class="calculator-column calculator-button" id="Subtract">-</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('1')">1</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('2')">2</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('3')">3</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('4')">4</button>
+                        <button class="calculator-column calculator-button" id="%">%</button>
                     </div>
                     <div class="row">
-                        <button class="calculator-column calculator-button" id="numberSeven" onclick="OperateNumber(7)">7</button>
-                        <button class="calculator-column calculator-button" id="numberEight" onclick="OperateNumber(8)">8</button>
-                        <button class="calculator-column calculator-button" id="numberNine" onclick="OperateNumber(9)">9</button>
-                        <button class="calculator-column calculator-button" id="Add" >+</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('5')">5</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('6')">6</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('7')">7</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('8')">8</button>
+                        <button class="calculator-column calculator-button" id="*">x</button>
                     </div>
                     <div class="row">
-                        <button class="calculator-column calculator-button" id="Divide">/</button>
-                        <button class="calculator-column calculator-button" id="numberZero" onclick="OperateNumber(0)">0</button>
-                        <button class="calculator-column calculator-button" id="Modulus">%</button>
-                        <button class="calculator-column calculator-button" id="Multiply">x</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber('9')">9</button>
+                        <button class="calculator-column calculator-button" onclick="OperateNumber(0)">0</button>
+                    </div>
+                    <div class="row">
                     </div>
                 </div>
             </div>
 </body>
 
-
+<script src="../Scripts/Calculator.js"></script>
 </html>
