@@ -4,85 +4,87 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Basic Tools Website</title>
     <link rel="stylesheet" href="../stylesheet.css">
 
 </head>
 
-<!-- NAVBAR -->
-<nav class="nav">
-    <div>
-        <ul>
-            <li><a href="Calculator.html">Calculator</a></li>
-            <li><a href="ToDoList.html">To-Do List</a></li>
-            <li><a href="Timer.html">Timer & Stopwatch</a></li>
-        </ul>
-    </div>
-</nav>
-
 <body>
+
+    <!-- NAVBAR -->
     <!-- INTRO PARAGRAPH  -->
-    <div>
-        <div class="div-titles">
-            <h1><b>Welcome to <i>Basic Tools!</i></b></h1>
-            <div class="div-para">
-                <i><b>Basic Tools</b></i> is a beginner-level Javascript website that combines three
-                interactive mini-projects into a single platform. Each project is designed to demonstrate specific
-                Javascript concepts such as working with libraries, manipulating objects, and using operators.
-                This project also highlights my ability to structure and style responsive web pages using HTML and CSS,
-                integrating them with dynamic Javascript functionality. Together, these tools reflect my growing
-                understanding
-                of front-end development and my ability to build functional, user-friendly interfaces. Below is a
-                breakdown
-                of the key concepts each tool focuses on:
-            </div>
-            <!-- Column and Rows -->
-            <div class="row">
-                <div class="column div-titles">
-                    <img src="../images/calculator.png" />
-                    <h2>Functional Calculator</h2>
-                    <div class="div-container">
-                        This calculator project teaches me how to use Javascript operators
-                        and handle user input through buttons. It supports basic arithmetic, including modulus, and
-                        reinforces
-                        logic building and real-time calculations.
-                    </div>
-                </div>
-                <div class="column div-titles">
-                    <img src="../images/to-do-list.png" />
-                    <h2>To-Do List</h2>
-                    <div class="div-container">
-                        In this project, I'm focusing on Javascript objects and DOM manipulation.
-                        Users can add, delete and organize tasks, which helps me handling dynamic data
-                        and creating interactive user interfaces.
-                    </div>
-                </div>
-                <div class="column div-titles">
-                    <img src="../images/stopwatch.png"" />
-                    <h2>Timer & StopWatch</h2>
-                    <div class=" div-container">
-                    This project helps me learn how to use Javascript libraries and manage time-based functions.
-                    It includes a customizable timer and a stopwatch with start, stop and reset functionality,
-                    along
-                    with alerts to notify when time is up.
-                </div>
-            </div>
+    <div class="div-titles anim-background">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
 
-        </div>
-        <footer>&copy; 2025 Valeria Arenas. All rights reserved</footer>
     </div>
+    <div class=" div-titles title-card">
+        Welcome to basic tools
+    </div>
+    <div>
+        <!-- Column and Rows -->
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front card-titles">
+                        <img src="../images/to-do-list.png">
+                        <h2>To-Do List</h2>
+                    </div>
+                    <div class="card-back">
+                        <p class="para-card">
+                            In this project, I'm focusing on Javascript objects and DOM manipulation.
+                            Users can add, delete and organize tasks, which helps me handling dynamic data
+                            and creating interactive user interfaces.
+                            <a href="./ToDoList.html">Try it out! <img class="img-next" src="../images/Next.png"></a>
+                        </p>
 
+                    </div>
+                </div>
+            </div>
 
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front card-titles">
+                        <img src="../images/calculator.png">
+                        <h2>Calculator</h2>
+                    </div>
+                    <div class="card-back">
+                        <p class="para-card">
+                            This calculator project teaches me how to use Javascript operators
+                            and handle user input through buttons. It supports basic arithmetic, including modulus, and
+                            reinforces
+                            logic building and real-time calculations.
+                            <a href="./Calculator.html">Try it out! <img class="img-next" src="../images/Next.png"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front card-titles">
+                        <img src="../images/stopwatch.png">
+                        <h2>Stopwatch / Timer</h2>
+                    </div>
+                    <div class="card-back">
+                        <p class="para-card">
+                            This project helps me learn how to use Javascript libraries and manage time-based functions.
+                            It includes a customizable timer and a stopwatch with start, stop and reset functionality,
+                            along
+                            with alerts to notify when time is up.
+                            <a href="./Timer.html">Try it out! <img class="img-next" src="../images/Next.png"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
-
-
-<!-- Tasks 
-4. Calculator (Learning Operators)
-    - Will allow for all operators to happen based on buttons clicked.
-    - Will include Modulus
-5. OPTIMIZATION
-    - At the end of the prject I will go back and optimize my code, research the best modern practices in Javascript to keep my code clean and professional
-    following industries standards
- -->

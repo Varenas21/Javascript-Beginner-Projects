@@ -1,10 +1,9 @@
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT  */
-:root
-{
-  --Dark-Navy: #2D3250;
-  --Light-Orange: #F9B17A;
-  --Light-Navy: #676F9D;
-  --Medium-Navy: #424769;
+:root {
+  --Dark-Blue: #1A3D63;
+  --Med-Blue: #4A7FA7;
+  --Light-Blue: #B3CFE5;
+  --White: #F6FAFD;
 }
 
 @font-face {
@@ -12,184 +11,264 @@
   src: url(./fonts/raleway/Raleway-Regular.ttf);
 }
 
-nav {
-  background-color: var(--Dark-Navy);
-  color: var(--Light-Orange);
-  padding: 25px;
-  font: 300;
-  font-size: larger;
-  font-family: Raleway;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-size: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.time-date {
-  text-align: center;
-  font-size: 60px;
-}
-
-.nav li {
-  display: inline;
-  margin-right: 25px;
-}
-
-.nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  align-items: center;
-}
-
-.nav li a{
-  color: var(--Light-Orange);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav li a:hover{
-  text-decoration: underline;
-}
-
 body {
-  font-family: monospace;
-  background-color: whitesmoke;
-   font-family: Raleway;
+  font-family: 'Raleway';
+  margin: 0;
+  padding: 0;
+  background-color: #E3F1FF;
+}
+
+ul {
+  font-family: 'Raleway';
+  font-size: 25px;
+  font-weight: bolder;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+  overflow: hidden;
+  background-color: var(--Dark-Blue);
+  box-shadow: 5px 5px 10px 2px var(--Med-Blue);
+
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: var(--White);
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+img {
+  padding: 25px 25px;
+  width: 100px;
+  height: 100px;
+}
+
+a{
+  text-align: center;
+  font-size: medium;
+  text-decoration: none;
+  color: var(--White);
+  padding-bottom: 5px;
+}
+
+
+
+.para-card {
+  padding: 35px 35px;
+  font-size: large;
+}
+
+.title-card
+{
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  display: block;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.img-next
+{
+  width: 24px;
+  height: 24px;
 }
 
 .div-titles {
-  color: black;
-   font-family: Raleway;
-  font-size: larger;
+  font-size: 100px;
   text-align: center;
-  padding: 5px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-weight: 700;
+  padding: 50px 15px;
 }
 
 .div-para {
-  background-color: var(--Medium-Navy);
-  color: var(--Light-Orange);
+  background-color: var(--Light-Blue);
   text-align: center;
-  padding: 15px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 130%;
+  padding: 15px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-style: double;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
 }
 
-.div-container {
-  background-color: var(--Medium-Navy);
-  color: var(--Light-Orange);
-  text-align: center;
-  padding: 3px;
-  align-items: center;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.column {
-  width: 25.25%;
-  padding: 15px;
-}
-
-.row {
+.cards-container {
+  padding-top: 20px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  justify-content: space-around;
+  gap: 30px;
 }
 
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+.card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
+.card-titles {
+  background-color: var(--Light-Blue);
+  text-align: center;
+  font-size: 30px;
+  padding: 15px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-style: double;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
+}
+
+.card-inner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: var(--White);
+  color: black;
+  border-color: black;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
+}
+
+.card-back {
+  background-color: var(--Med-Blue);
+  color: var(--White);
+  border-color: black;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
+}
+
+@keyframes move
+{
+  100%
+  {
+    transform: translate3d(0,0,1px)
+    rotate(360deg);
   }
 }
 
-button {
-  color: var(--Light-Orange);
-  background-color: var(--Light-Navy);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
+.anim-background
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  background-color: #E3F1FF;
+  overflow: hidden;
 }
 
-.calculator-button {
-  color: var(--Light-Orange);
-  background-color: var(--Light-Navy);
-  text-align: center;
-  text-decoration: none;
-  font-size: 50px;
-  cursor: pointer;
-  border-radius: 5px;
+.ball
+{
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
 }
 
-.calculator-column{
-  width: 100px;
-  padding: 15px;
+.ball:nth-child(odd)
+{
+  color: var(--Dark-Blue);
 }
 
-
-.list-items {
-    list-style-type: disc;
-    padding-left: 20px;
+.ball:nth-child(even)
+{
+  color: var(--Light-Blue);
 }
 
-.card-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+.ball:nth-child(1)
+{
+  top: 77%;
+  left: 88%;
+  animation-duration: 40s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 40vmin 0 5.7030763vmin currentColor;
 }
 
-.card-column {
-  width: 25.25%;
-  padding: 15px;
+.ball:nth-child(2) {
+  top: 42%;
+  left: 2%;
+  animation-duration: 53s;
+  animation-delay: -29s;
+  transform-origin: -19vw 21vh;
+  box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
 }
-
-.time-input-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
+.ball:nth-child(3) {
+  top: 28%;
+  left: 18%;
+  animation-duration: 49s;
+  animation-delay: -8s;
+  transform-origin: -22vw 3vh;
+  box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
 }
-
-.time-input-group input {
-  width: 60px;
-  padding: 8px;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
+.ball:nth-child(4) {
+  top: 50%;
+  left: 79%;
+  animation-duration: 26s;
+  animation-delay: -21s;
+  transform-origin: -17vw -6vh;
+  box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
 }
-
-.time-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #d9d9d9;
-  text-align: center;
+.ball:nth-child(5) {
+  top: 46%;
+  left: 15%;
+  animation-duration: 36s;
+  animation-delay: -40s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
 }
-
-.time-separator {
-  font-size: 24px;
-  color: #d9d9d9;
+.ball:nth-child(6) {
+  top: 77%;
+  left: 16%;
+  animation-duration: 31s;
+  animation-delay: -10s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+}
+.ball:nth-child(7) {
+  top: 22%;
+  left: 17%;
+  animation-duration: 55s;
+  animation-delay: -6s;
+  transform-origin: 1vw -23vh;
+  box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+}
+.ball:nth-child(8) {
+  top: 41%;
+  left: 47%;
+  animation-duration: 43s;
+  animation-delay: -28s;
+  transform-origin: 25vw -3vh;
+  box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
 }
