@@ -1,0 +1,65 @@
+
+:root {
+  --Dark-Blue: #1A3D63;
+  --Med-Blue: #4A7FA7;
+  --Light-Blue: #B3CFE5;
+  --White: #F6FAFD;
+}
+
+@keyframes move
+{
+  100%
+  {
+    transform: translate3d(0,0,1px)
+    rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/raleway/Raleway-Regular.ttf");
+}
+
+.center-container
+{
+  height: 200px;
+  position:relative;
+}
+
+.center
+{
+  margin: 0%;
+  position:absolute;
+  top: 5px;
+  left: 50%;
+  bottom: 5px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.img-next
+{
+  width: 24px;
+  height: 24px;
+}
+
+.div-titles {
+  font-size: 100px;
+  text-align: center;
+  font-weight: 700;
+  
+  padding: 50px;
+
+}
+
+.div-para {
+  background-color: var(--Light-Blue);
+  text-align: center;
+  font-size: 130%;
+  padding: 15px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-style: double;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
+}
+

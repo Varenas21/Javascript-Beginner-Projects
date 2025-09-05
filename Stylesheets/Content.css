@@ -1,0 +1,89 @@
+@import "./Layout.css";
+/* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT  */
+
+.list-button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: var(--White);
+    color: black;
+    text-align: center;
+    font-size: medium;
+    padding: 5px 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0px 5px 5px var(--Dark-Blue);
+}
+
+.list-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.list-button span::after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.list-button:hover span {
+    padding-right: 25px;
+}
+
+.list-button:hover span::after {
+    opacity: 1;
+    right: 0;
+}
+
+.home-button span::after {
+  content: "\2302";
+}
+
+.list-ul {
+    background-color: var(--Light-Blue);
+    padding-top: 0%;
+    padding: 20px 25px;
+    text-align: left;
+    list-style-type: square;
+    box-shadow: none;
+    
+}
+
+.input-buttons {
+    border-radius: 5px;
+    background-color: var(--White);
+    color: black;
+    text-align: center;
+    font-size: medium;
+    padding: 5px 10px;
+    width: 150px;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0px 5px 5px var(--Dark-Blue);
+}
+
+.complete-button {
+    border-radius: 5px;
+    background-color: var(--White);
+    color: black;
+    text-align: center;
+    font-size: medium;
+    margin-left: 20px;
+    width: 100px;
+    cursor: pointer;
+
+    box-shadow: 0px 5px 5px var(--Dark-Blue);
+}
+
+.complete-button:disabled
+{
+    background-color: lightgrey;
+    color: black;
+}
+

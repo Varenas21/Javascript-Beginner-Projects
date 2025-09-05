@@ -5,9 +5,114 @@
 // Will create a nested object list, it will get the name AND will iterate through the list of items that are nested
 
 let count = 0;
-const CREATE_BUTTON = document.getElementById('createBtn'); // Cannot use querySelector but is the modern commonly used (Google)
+const CREATE_BUTTON = document.getElementById('CreateBtn'); // Cannot use querySelector but is the modern commonly used (Google)
 const LIST_CONTAINER = document.getElementById('ListContainer');
 
+
+let allLists = JSON.parse(localStorage.getItem("lists")) || [];
+
+function SaveLists() 
+{
+    localStorage.setItem("lists", JSON.stringify(allLists));
+}
+
+function RenderLists(newList) 
+{
+    const CARD = document.createElement('div');
+    CARD.classList.add('cards-column', 'list-card');
+
+    //List name, Creates a div for the title and name
+    const LIST_TITLE = document.createElement('h2');
+    LIST_TITLE.setAttribute("class", "list-title")
+    LIST_TITLE.textContent = newList.ListName;
+
+    const CONTAINER = document.createElement('div');
+    CONTAINER.setAttribute("class", "card");
+
+    //Empty ul for future items
+    const UL = document.createElement('ul');
+    UL.setAttribute("class", "list-ul")
+
+    //Placeholder for empty list
+    const PLACE_HOLDER = document.createElement('li');
+    PLACE_HOLDER.setAttribute("class", "list-ul");
+    PLACE_HOLDER.textContent = "No Items!";
+    if (newList.ListItems.length === 0) { UL.appendChild(PLACE_HOLDER); }
+
+    // ADD ITEMS BUTTON
+    const ADD_BUTTON = document.createElement('button');
+    ADD_BUTTON.setAttribute("class", "input-buttons")
+    ADD_BUTTON.textContent = "Add Item";
+
+    ADD_BUTTON.addEventListener('click', function () {
+
+        if (newList.ListItems.length < 4) {
+            let userPromptItem = prompt("Please enter the name of your item", "Item Name");
+
+            let itemText = (userPromptItem === null || userPromptItem.trim() === "") ? "Unnamed Item" : userPromptItem.trim();
+
+            if (UL.contains(PLACE_HOLDER)) { UL.removeChild(PLACE_HOLDER); }
+
+            newList.ListItems.push({ text: itemText, complete: false }); // If its an array use push, otherwise add it as newList.ListItems[Item] = itemText;
+            SaveLists();
+
+            RenderItem(UL, newList, newList.ListItems.length - 1);
+        }
+    });
+
+    // DELETE LIST BUTTON
+    const DELETE_BUTTON = document.createElement('button');
+    DELETE_BUTTON.setAttribute("class", "input-buttons")
+    DELETE_BUTTON.textContent = "Delete List";
+    DELETE_BUTTON.addEventListener('click', () => 
+        {
+         if (confirm(`Delete "${newList.ListName}"?`)) 
+        { 
+            CARD.remove();
+            allLists = allLists.filter (l => l !== newList);
+            SaveLists();
+        } 
+        });
+
+        newList.ListItems.forEach((_, i) => RenderItem(UL, newList, i));
+
+    // Combine Card Together
+    CONTAINER.appendChild(UL);
+    CONTAINER.appendChild(ADD_BUTTON);
+    CONTAINER.appendChild(DELETE_BUTTON);
+    CARD.appendChild(LIST_TITLE);
+    CARD.appendChild(CONTAINER);
+    LIST_CONTAINER.appendChild(CARD);
+}
+
+function RenderItem(UL, listObj, index) 
+{
+    const itemObj = listObj.ListItems[index];
+
+    const LI = document.createElement('li'); // MAKING NEW LIST EACH TIME
+    LI.textContent = itemObj.text;
+
+    const COMPLETE_ITEM = document.createElement('button');
+    COMPLETE_ITEM.textContent = "Complete"
+    COMPLETE_ITEM.setAttribute("class", "complete-button");
+
+    if (itemObj.complete) {
+        LI.style.color = 'lime';
+        COMPLETE_ITEM.disabled = true;
+    }
+
+    COMPLETE_ITEM.addEventListener('click', () => {
+        itemObj.complete = true;
+        LI.style.color = 'lime';
+        COMPLETE_ITEM.disabled = true;
+        SaveLists();
+    });
+
+    UL.appendChild(LI);
+    UL.appendChild(COMPLETE_ITEM);
+
+
+}
 
 CREATE_BUTTON.addEventListener('click', function () {
     let newList = {
@@ -23,76 +128,14 @@ CREATE_BUTTON.addEventListener('click', function () {
         ? "List " + ++count
         : userPrompt.trim();
 
-    const CARD = document.createElement('div');
-    CARD.classList.add('card-column', 'div-titles');
+    allLists.push(newList);
+    SaveLists();
 
-    //List name, Creates a div for the title and name
-    const LIST_TITLE = document.createElement('h2');
-    LIST_TITLE.textContent = newList.ListName;
-
-    const CONTAINER = document.createElement('div');
-    CONTAINER.classList.add('div-container');
-
-    //Empty ul for future items
-    const UL = document.createElement('ul');
-    UL.style.listStyleType = "decimal";
-    UL.style.listStyleType = "disc";
-    UL.style.paddingLeft = "20px";
-    UL.style.textAlign = "left";
-
-    //Placeholder for empty list
-    const PLACE_HOLDER = document.createElement('li');
-    PLACE_HOLDER.textContent = "No items yet!";
-    PLACE_HOLDER.style.color = 'red';
-    PLACE_HOLDER.style.alignContent = 'center';
-    UL.appendChild(PLACE_HOLDER);
-
-    // ADD ITEMS BUTTON
-    const ADD_BUTTON = document.createElement('button');
-    ADD_BUTTON.textContent = "Add Item";
-
-    ADD_BUTTON.addEventListener('click', function () {
-
-        let userPromptItem = prompt("Please enter the name of your item", "Item Name");
-
-        let itemText = (userPromptItem === null || userPromptItem.trim() === "") ? "No item specified!" : userPromptItem.trim();
-
-        if (UL.contains(PLACE_HOLDER)) { UL.removeChild(PLACE_HOLDER); }
-
-        newList.ListItems.push(itemText); // If its an array use push, otherwise add it as newList.ListItems[Item] = itemText;
-        const LI = document.createElement('li');
-        LI.textContent = itemText;
-        const COMPLETE_ITEM = document.createElement('button');
-        COMPLETE_ITEM.style.float = 'right';
-        COMPLETE_ITEM.textContent="Complete";
-        UL.appendChild(LI);
-        UL.appendChild(COMPLETE_ITEM);
+    RenderLists(newList);
 
 
-        // COMPLETE ITEM
-        let isComplete = false;
-        COMPLETE_ITEM.addEventListener('click', () => {
-            isComplete = true;
-            if (isComplete === true) {
-                LI.style.color = 'lime';
-                COMPLETE_ITEM.disabled = true;
-                COMPLETE_ITEM.style.backgroundColor = 'lightgrey';
-                COMPLETE_ITEM.textContent = "Done!";
-  
-            }
-        });
-    });
+});
 
-    // DELETE LIST BUTTON
-    const DELETE_BUTTON = document.createElement('button');
-    DELETE_BUTTON.textContent = "Delete List";
-    DELETE_BUTTON.addEventListener('click', () => { if (confirm(`Delete "${newList.ListName}"?`)) { CARD.remove(); }});
-
-    // Combine Card Together
-    CONTAINER.appendChild(UL);    
-    CONTAINER.appendChild(ADD_BUTTON);
-    CONTAINER.appendChild(DELETE_BUTTON);
-    CARD.appendChild(LIST_TITLE);
-    CARD.appendChild(CONTAINER);
-    LIST_CONTAINER.appendChild(CARD);
+window.addEventListener("load", () => {
+    allLists.forEach(list => RenderLists(list));
 });
