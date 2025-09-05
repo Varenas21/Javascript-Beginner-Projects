@@ -1,7 +1,7 @@
 @import "./Layout.css";
 /* 2025 VALERIA ARENAS - BASICS IN JAVASCRIPT  */
 
-.list-button {
+.button {
     display: inline-block;
     border-radius: 5px;
     background-color: var(--White);
@@ -14,6 +14,30 @@
     cursor: pointer;
     margin: 5px;
     box-shadow: 0px 5px 5px var(--Dark-Blue);
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.calculator-button {
+    border-radius: 10px;
+    background-color: var(--Light-Blue);
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    transition: 0.2s ease;
+    box-shadow: 0px 4px 6px var(--Dark-Blue);
+}
+
+.calculator-button:hover {
+    background-color: var(--Med-Blue);
+    color: var(--White);
+    transform: scale(1.05);
 }
 
 .list-button span {
@@ -42,7 +66,7 @@
 }
 
 .home-button span::after {
-  content: "\2302";
+    content: "\2302";
 }
 
 .list-ul {
@@ -52,7 +76,7 @@
     text-align: left;
     list-style-type: square;
     box-shadow: none;
-    
+
 }
 
 .input-buttons {
@@ -81,9 +105,7 @@
     box-shadow: 0px 5px 5px var(--Dark-Blue);
 }
 
-.complete-button:disabled
-{
+.complete-button:disabled {
     background-color: lightgrey;
     color: black;
 }
-

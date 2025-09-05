@@ -3,9 +3,11 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Basic Tools Website</title>
     <link rel="stylesheet" href="../Stylesheets/Layout.css">
+    <link rel="stylesheet" href="../Stylesheets/Content.css">
 
 </head>
 
@@ -17,46 +19,49 @@
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span>
-
     </div>
-    <div>
-        <div class="div-titles title-card">
-            Calculator
+
+    <div class="div-titles title-card">
+        Calculator
+    </div>
+    <div class="center-container">
+        <div class="center">
+            <button id="HomeBtn" class="button home-button" onclick="window.location.href='./index.html'">
+                <span>
+                    Main Page
+                </span>
+            </button>
         </div>
-        <div class="div-titles">
-            <h2 id="CalcDisplay">DISPLAY</h2>
-            <div class="div-container">
-                <div class="row">
-                    <button class="calculator-column calculator-button" id="Clear">CE</button>
-                    <button class="calculator-column calculator-button" id="Add" name="+">+</button>
-                    <button class="calculator-column calculator-button" id="Subtract" name="-">-</button>
-                    <button class="calculator-column calculator-button" id="Divide" name="/">/</button>
-                    <button class="calculator-column calculator-button" id="Equal">=</button>
-                </div>
-                <div class="row">
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('1')">1</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('2')">2</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('3')">3</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('4')">4</button>
-                    <button class="calculator-column calculator-button" id="Mod" name="%">%</button>
-                </div>
-                <div class="row">
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('5')">5</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('6')">6</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('7')">7</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('8')">8</button>
-                    <button class="calculator-column calculator-button" id="Multiply" name="*">x</button>
-                </div>
-                <div class="row">
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('9')">9</button>
-                    <button class="calculator-column calculator-button" onclick="OperateNumber('0')">0</button>
-                </div>
-                <div class="row">
-                </div>
+        <div class="calculator-card">
+            <div id="CalcDisplay">0</div>
+            <div class="cards-row">
+                <button class="calculator-button" id="Clear">CE</button>
+                <button class="calculator-button" id="Add" name="+">+</button>
+                <button class="calculator-button" id="Subtract" name="-">-</button>
+                <button class="calculator-button" id="Divide" name="/">/</button>
+                <button class="calculator-button" id="Equal">=</button>
+            </div>
+            <div class="cards-row">
+                <button class="calculator-button" onclick="OperateNumber('1')">1</button>
+                <button class="calculator-button" onclick="OperateNumber('2')">2</button>
+                <button class="calculator-button" onclick="OperateNumber('3')">3</button>
+                <button class="calculator-button" onclick="OperateNumber('4')">4</button>
+                <button class="calculator-button" id="Mod" name="%">%</button>
+            </div>
+            <div class="cards-row">
+                <button class="calculator-button" onclick="OperateNumber('5')">5</button>
+                <button class="calculator-button" onclick="OperateNumber('6')">6</button>
+                <button class="calculator-button" onclick="OperateNumber('7')">7</button>
+                <button class="calculator-button" onclick="OperateNumber('8')">8</button>
+                <button class="calculator-button" id="Multiply" name="*">x</button>
+            </div>
+            <div class="cards-row">
+                <button class="calculator-button" onclick="OperateNumber('9')">9</button>
+                <button class="calculator-button" onclick="OperateNumber('0')">0</button>
             </div>
         </div>
+    </div>
 </body>
 
-<script src="../Scripts/Calculator.js"></script>
-
 </html>
+<script src="../Scripts/Calculator.js"></script>
