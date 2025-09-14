@@ -1,11 +1,12 @@
 # Basic Tools
 
-![Main Page Screenshot](https://github.com/Varenas21/Javascript-Beginner-Projects/blob/826c5c9fd0e70c3ddef11ac49c1f002ee291e2e5/images/Mainpage%20Sample.png?raw=true)
+![Main Page Screenshot](https://github.com/Varenas21/Javascript-Beginner-Projects/blob/main/images/MainPage.png)
 
 **Basic Tools** is a beginner-friendly JavaScript project that showcases three interactive web-based tools: a Timer/Stopwatch, a To-Do List, and a calculator.
 Each tool is built to demonstrate a core JavaScript concept while also highlighting clean HTML structure and responsive CSS styling. This project is part of my learning journey in front-end web development.
 
 ## 🔧 Features
+
 ### ⏲️ Timer & Stopwatch
 - Set custom timers using hours, minutes, and seconds
 - Start, stop, and reset stopwatch functionality
@@ -13,9 +14,9 @@ Each tool is built to demonstrate a core JavaScript concept while also highlight
 - **JavaScript Skills**: Time-based functions, setTimeout, setInterval, event handling, working with external libraries
 
 ### ✅ To-Do List
-- - Add, delete, and manage tasks
-  - Create organized and dynamic task lists
-  - **JavaScript Skills:** Object manipulation, array methods, DOM interaction, event listeners
+- Add, delete, and manage tasks
+- Create organized and dynamic task lists
+- **JavaScript Skills:** Object manipulation, array methods, DOM interaction, event listeners
 
 ### 🧮 Calculator
 - Perform basic arithmetic: addition, subtraction, multiplication, division and modulus
