@@ -23,6 +23,10 @@
   src: url("../fonts/raleway/Raleway-Regular.ttf");
 }
 
+input {
+    border-radius: 5px;
+}
+
 .center-container
 {
   height: 200px;

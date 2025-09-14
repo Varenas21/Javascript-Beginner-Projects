@@ -109,3 +109,68 @@
     background-color: lightgrey;
     color: black;
 }
+
+.timer-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 350px;
+  min-height: 250px;
+}
+
+.timer-flex {
+  display: flex;
+  justify-content: space-between; /* left column left, right column right */
+  align-items: flex-start;
+  gap: 20px; /* space between columns */
+}
+
+.timer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between each label/input */
+  align-items: flex-start;
+}
+
+.timer-right {
+  display: flex;
+  flex-direction: column; /* vertical buttons */
+  gap: 10px;
+  align-items: flex-end; /* right align buttons */
+}
+
+.stopwatch-controls{
+    display:flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.time-buttons
+{
+    border-radius: 5px;
+    background-color: var(--White);
+    color: black;
+    text-align: center;
+    font-size: medium;
+    width: 120px;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px var(--Dark-Blue);
+}
+
+#TimeDate
+{
+    justify-content: center;
+    font-size: xx-large;
+    text-align: center;
+
+    padding-bottom: 100px;
+}
+

@@ -5,72 +5,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Basic Tools Website</title>
-    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../Stylesheets/Layout.css">
+    <link rel="stylesheet" href="../Stylesheets/Content.css">
 </head>
 
-<!-- NAVBAR -->
-<nav class="nav">
-    <div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Calculator.html">Calculator</a></li>
-            <li><a href="ToDoList.html">To-Do List</a></li>
-            <li><a href="Timer.html">Timer & Stopwatch</a></li>
-        </ul>
-    </div>
-</nav>
+
 
 <body>
-    <!-- Create buttons that begins a new list -->
-    <div class="div-titles">
-        <h1><b>Welcome to <i>Basic Tools!</i></b></h1>
-        <div class="div-para">
-            <h2><i><b>Timer & Stopwatch</b></i> - Track time with precision using a customizable stopwatch and timer.
-                Start,
-                stop, reset, and receive alerts when time is up—perfect for productivity, workouts, or countdowns!</h2>
-            <br>
-            <h1><u>Current Date & Time</u></h1>
-            <h1>
-                <div class="time-date" id="TimeDate"></div>
-            </h1>
+    <div class="div-titles anim-background">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+
+    </div>
+    <div class="div-titles title-card">
+        To-Do List
+    </div>
+
+    <div class="center-container">
+        <div class="center">
+            <button id="HomeBtn" class="button home-button" onclick="window.location.href='./index.html'">
+                <span>
+                    Main Page
+                </span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <div class="cards-container cards-row">
+
+        <!-- FIRST CARD TIME -->
+        <div class="card cards-column">
+            <div class="time-card center">
+                <h1><u>Current Date & Time</u></h1>
+                <h2>
+                    <div id="TimeDate"></div>
+                </h2>
+            </div>
         </div>
 
-        <div class="row">
-            <div class="column div-titles">
-                <h2>Timer</h2>
-                <div class="div-container">
-                    <h1 id="TimerDisplay">00::00::00</h1>
-                    <div class="time-input-group">
+        <!-- SECOND CARD TIMER -->
+
+        <div class="card cards-column">
+            <div class="time-card center">
+                <h1><u>Timer</u></h1>
+                <h1 id="TimerDisplay">00::00::00</h1>
+                <div class="timer-card-content">
+                    <div class="timer-controls">
                         <label>
-                            <span class="time-label">Hours</span>
+                            <span>Hours</span>
                             <input type="number" id="UserHours" name="UserHours" min="0" max="99">
                         </label>
-                        <span class="time-seperator">::</span>
+
+
                         <label>
                             <span class="time-label">Minutes</span>
                             <input type="number" id="UserMinutes" name="UserMinutes" min="0" max="59">
                         </label>
-                        <span class="time-seperator">::</span>
+
+
                         <label>
                             <span class="time-label">Seconds</span>
                             <input type="number" id="UserSeconds" name="UserSeconds" min="0" max="59">
                         </label>
                     </div>
-                    <button id="TStartBtn">Start</button>
-                    <button id="TStopBtn">Stop</button>
-                    <button id="TResetBtn">Reset</button>
-                </div>
-            </div>
-            <div class="column div-titles">
-                <h2>Stopwatch</h2>
-                <div class="div-container">
-                    <h1 id="SWDisplay">00::00::00</h1>
-                    <button id="SWStartBtn">Start</button>
-                    <button id="SWStopBtn">Stop</button>
-                    <button id="SWResetBtn">Reset</button>
+
+                        <div class="timer-controls">
+                            <button id="TStartBtn" class="time-buttons">Start</button>
+                            <button id="TStopBtn" class="time-buttons">Stop</button>
+                            <button id="TResetBtn" class="time-buttons">Reset</button>
+                        </div>
+
                 </div>
             </div>
         </div>
+
+        <!-- FINAL CARD STOPWATCH -->
+        <div class="card cards-column">
+            <div class="time-card center">
+                <h1><u>Stopwatch</u></h1>
+                <h1 id="SWDisplay">00::00::00</h1>
+                <div class="stopwatch-controls"> <button id="SWStartBtn" class="time-buttons">Start</button>
+                    <button id="SWStopBtn" class="time-buttons">Stop</button>
+                    <button id="SWResetBtn" class="time-buttons">Reset</button>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </body>
 <script src="../Scripts/Timer.js"></script>

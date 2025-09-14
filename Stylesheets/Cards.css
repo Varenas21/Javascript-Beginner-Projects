@@ -141,3 +141,21 @@
   display: inline-block;
   
 }
+
+.time-card
+{
+  background-color: var(--White);
+  padding:20px;
+  min-width: 350px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+    color: black;
+  border-color: black;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 2px var(--Dark-Blue);
+}
+
+
